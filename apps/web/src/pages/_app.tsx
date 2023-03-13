@@ -65,6 +65,7 @@ function MyApp(props: AppProps<{ initialReduxState: any }>) {
 
   return (
     <>
+    
       <Head>
         <meta
           name="viewport"

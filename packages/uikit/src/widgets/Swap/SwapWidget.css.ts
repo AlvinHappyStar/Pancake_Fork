@@ -40,7 +40,7 @@ export const inputVariants = recipe({
     border: "none",
     flex: "1 1 auto",
     backgroundColor: "transparent",
-    fontSize: 16,
+    fontSize: 20,
     whiteSpace: "nowrap",
     overflow: "hidden",
     textOverflow: "ellipsis",
@@ -70,10 +70,10 @@ export const inputVariants = recipe({
     },
     align: {
       left: {
-        textAlign: "left",
+        textAlign: "right",
       },
       right: {
-        textAlign: "right",
+        textAlign: "left",
       },
     },
   },

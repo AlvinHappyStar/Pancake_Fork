@@ -115,7 +115,8 @@ export default function Pool() {
   return (
     <Page>
       <div style={{
-        width: '45%',
+        display: 'flex',
+        width: '330px',
       }}>
         <AppBody>
           <AppHeader title={t('Your Liquidity')} subtitle={t('Remove liquidity to receive tokens back')} />

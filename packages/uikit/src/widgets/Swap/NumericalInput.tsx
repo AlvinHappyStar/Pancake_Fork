@@ -52,7 +52,7 @@ export const NumericalInput = memo(function InnerInput({
       // text-specific options
       type="text"
       pattern="^[0-9]*[.,]?[0-9]*$"
-      placeholder={placeholder || ""}
+      placeholder={placeholder || "0.0"}
       minLength={1}
       maxLength={79}
       spellCheck="false"
