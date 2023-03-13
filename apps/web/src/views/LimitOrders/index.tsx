@@ -371,7 +371,7 @@ const LimitOrders = () => {
             <StyledInputCurrencyWrapper>
               <AppBody>
                 <CurrencyInputHeader
-                  title={t('Limit order')}
+                  title={t('Create a limit order')}
                   subtitle={t('Place a limit order to trade at a set price')}
                   setIsChartDisplayed={setIsChartDisplayed}
                   isChartDisplayed={isChartDisplayed}

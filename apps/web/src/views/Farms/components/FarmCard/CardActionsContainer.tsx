@@ -46,6 +46,7 @@ const CardActions: React.FC<React.PropsWithChildren<FarmCardActionsProps>> = ({
   const { stakedBalance, tokenBalance, proxy } = farm.userData
 
   return (
+    
     <Action>
       <Flex>
         <Text bold textTransform="uppercase" color="secondary" fontSize="12px" pr="4px">
@@ -114,7 +115,11 @@ const CardActions: React.FC<React.PropsWithChildren<FarmCardActionsProps>> = ({
         <Skeleton width={80} height={18} mb="4px" />
       )}
       {!account ? (
+        <div style={{
+          height: '70px',
+        }}>
         <ConnectWalletButton mt="8px" width="100%" />
+        </div>
       ) : shouldUseProxyFarm ? (
         <ProxyStakedContainer {...farm} lpLabel={lpLabel} addLiquidityUrl={addLiquidityUrl} displayApr={displayApr}>
           {(props) => <StakeAction {...props} />}
@@ -125,6 +130,7 @@ const CardActions: React.FC<React.PropsWithChildren<FarmCardActionsProps>> = ({
         </StakedContainer>
       )}
     </Action>
+    
   )
 }
 

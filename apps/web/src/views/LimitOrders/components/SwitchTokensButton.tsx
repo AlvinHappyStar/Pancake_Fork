@@ -9,7 +9,7 @@ const StyledButton = styled(IconButton)`
     display: none;
   }
   &:hover {
-    background-color: ${({ theme }) => theme.colors.primary};
+    // background-color: ${({ theme }) => theme.colors.primary};
     .icon-down {
       display: none;
       fill: white;

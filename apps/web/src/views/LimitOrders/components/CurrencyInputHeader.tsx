@@ -40,7 +40,7 @@ const CurrencyInputHeader: React.FC<React.PropsWithChildren<Props>> = ({
         <Flex flex="1" justifyContent="left">
           <Heading as="h2">{title}</Heading>
         </Flex>
-        <Flex flex="1" justifyContent="right">
+        {/* <Flex flex="1" justifyContent="right">
           {setIsChartDisplayed && (
             <ColoredIconButton onClick={toggleChartDisplayed} variant="text" scale="sm">
               {isChartDisplayed ? (
@@ -50,7 +50,7 @@ const CurrencyInputHeader: React.FC<React.PropsWithChildren<Props>> = ({
               )}
             </ColoredIconButton>
           )}
-        </Flex>
+        </Flex> */}
 
         {/* <Flex flex="1" justifyContent="flex-end">
           <IconButton onClick={onPresentTransactionsModal} variant="text" scale="sm">

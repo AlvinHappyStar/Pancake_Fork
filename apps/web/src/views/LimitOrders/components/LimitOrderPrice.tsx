@@ -110,17 +110,15 @@ const LimitOrderPrice: React.FC<React.PropsWithChildren<LimitOrderPriceProps>> =
       <Flex justifyContent="space-between" id={id}>
         <div style={{
           width: '100%',
-          height: '50px',
+          height: '70px',
           display: 'flex',
-          flexDirection: 'row',
-          alignItems: 'center',
-          justifyContent: 'center',
+          flexDirection: 'column',
           // color: '#F4EEFF',
-          margin:'5px',
+          margin: '5px',
           background: 'linear-gradient(90deg, #0d0b0c 0%, #0d0b0c 50%, #0d0b0c 100%)',
           borderRadius: '5px',
         }}>
-          {/* <Flex alignItems="center"> */}
+          {/* <Flex alignItems="center">
           <Text mr="8px" color="secondary" fontSize="12px" bold textTransform="uppercase">
             {t('Price')}
           </Text>
@@ -135,42 +133,49 @@ const LimitOrderPrice: React.FC<React.PropsWithChildren<LimitOrderPriceProps>> =
               {t('Market')}
             </Text>
           </Button>
-          {/* </Flex> */}
+          </Flex> */}
+          <Flex alignItems="center" justifyContent="space-around">
+          <Text mr="8px" color="secondary" fontSize="12px" bold textTransform="uppercase">
+            {t('Sell SFY at')}
+          </Text>
+          <OrderPriceInput
+            value={value}
+            disabled={disabled}
+            onChange={handleOnChange}
+            autoComplete="off"
+            autoCorrect="off"
+            pattern="^[0-9]*[.,]?[0-9]*$"
+            minLength={1}
+            maxLength={79}
+            spellCheck="false"
+            type="text"
+            inputMode="decimal"
+          />
+          </Flex>
+          
+          {hasCurrencyInfo && (
+            <LabelContainer justifyContent="flex-end" alignItems="center" onClick={toggleRateType} mr="10px">
+              <Text small bold>
+                {label}
+              </Text>
+              <SyncAltIcon color="textSubtle" width="24px" ml="4px" />
+            </LabelContainer>
+          )}
         </div>
         {/* {ratePercentageMessage && (
           <Text color={priceLabelColor} fontSize="12px">
             {ratePercentageMessage}
           </Text>
         )} */}
-        {/* <OrderPriceInput
-        value={value}
-        disabled={disabled}
-        onChange={handleOnChange}
-        autoComplete="off"
-        autoCorrect="off"
-        pattern="^[0-9]*[.,]?[0-9]*$"
-        minLength={1}
-        maxLength={79}
-        spellCheck="false"
-        type="text"
-        inputMode="decimal"
-      /> */}
-        {/* {hasCurrencyInfo && (
-          <LabelContainer justifyContent="flex-end" alignItems="center" onClick={toggleRateType}>
-            <Text small bold>
-              {label}
-            </Text>
-            <SyncAltIcon color="textSubtle" width="24px" ml="4px" />
-          </LabelContainer>
-        )} */}
+
         <div style={{
           width: '100%',
-          height: '50px',
+          height: '70px',
           display: 'flex',
           flexDirection: 'row',
           alignItems: 'center',
           justifyContent: 'center',
-          margin:'5px',
+          margin: '5px',
           // color: '#F4EEFF',
           background: 'linear-gradient(90deg, #0d0b0c 0%, #0d0b0c 50%, #0d0b0c 100%)',
           borderRadius: '5px',

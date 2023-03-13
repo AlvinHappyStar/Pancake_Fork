@@ -115,38 +115,42 @@ export default function Pool() {
   return (
     <Page>
       <div style={{
-        width:'60%',
+        width: '45%',
       }}>
-      <AppBody>
-        <AppHeader title={t('Your Liquidity')} subtitle={t('Remove liquidity to receive tokens back')} />
-        <Body>
-          {renderBody()}
-          {account && !v2IsLoading && (
-            <Flex flexDirection="column" alignItems="center" mt="24px">
-              <Text color="textSubtle" mb="8px">
-                {t("Don't see a pair you joined?")}
-              </Text>
-              <Link href="/find" passHref>
-                <Button id="import-pool-link" variant="secondary" scale="sm" as="a">
-                  <div style={{
-                    color:'#fff',
-                  }}>
-                  {t('Find other LP tokens')}
-                  </div>
-                </Button>
-              </Link>
-            </Flex>
-          )}
-        </Body>
-        {/* startIcon={<AddIcon color="invertedContrast" />} */}
-        <CardFooter style={{ textAlign: 'center' }}>
-          <Link href="/add" passHref>
-            <Button id="join-pool-button" width="100%" >
-              {t('Add Liquidity')}
-            </Button>
-          </Link>
-        </CardFooter>
-      </AppBody>
+        <AppBody>
+          <AppHeader title={t('Your Liquidity')} subtitle={t('Remove liquidity to receive tokens back')} />
+          <Body>
+            {renderBody()}
+            {account && !v2IsLoading && (
+              <Flex flexDirection="column" alignItems="center" mt="24px">
+                <Text color="textSubtle" mb="8px">
+                  {t("Don't see a pair you joined?")}
+                </Text>
+                <Link href="/find" passHref>
+                  <Button id="import-pool-link" variant="secondary" scale="sm" as="a">
+                    <div style={{
+                      color: '#fff',
+                    }}>
+                      {t('Find other LP tokens')}
+                    </div>
+                  </Button>
+                </Link>
+              </Flex>
+            )}
+          </Body>
+          {/* startIcon={<AddIcon color="invertedContrast" />} */}
+          {/* <CardFooter style={{ textAlign: 'center' }}> */}
+          <div style={{
+            margin:'30px 10px',
+            background: 'transparent',
+          }}>
+            <Link href="/add" passHref>
+              <Button id="join-pool-button" width="100%" >
+                {t('Add Liquidity')}
+              </Button>
+            </Link>
+          </div>
+        </AppBody>
       </div>
     </Page>
   )
