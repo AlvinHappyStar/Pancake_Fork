@@ -28,7 +28,7 @@ import WalletUserMenuItem from './WalletUserMenuItem'
 const ButtonTopWallet = styled(ConnectWalletButton)`
   background: linear-gradient(180deg, #7a436e, #7c364c);
   height:100%;
-  font-size:18px;
+  font-size:12px;
 `
 
 const UserMenuItems = () => {

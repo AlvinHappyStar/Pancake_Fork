@@ -33,7 +33,7 @@ export const iconUpDownClass = style({
 
 export const inputVariants = recipe({
   base: {
-    width: 0,
+    // width: 0,
     position: "relative",
     fontWeight: 500,
     outline: "none",

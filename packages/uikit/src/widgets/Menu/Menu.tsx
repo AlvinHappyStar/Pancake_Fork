@@ -69,6 +69,18 @@ const Inner = styled.div`
   max-width: 100%;
 `;
 
+const MobileView = styled.div`
+  @media (max-width: 767px) {
+      width:100%;
+      position:absolute;
+    & {
+      // display: none;
+      
+      height:200%;
+    }
+  }
+`
+
 const Menu: React.FC<React.PropsWithChildren<NavProps>> = ({
   linkComponent = "a",
   banner,
@@ -189,28 +201,40 @@ const Menu: React.FC<React.PropsWithChildren<NavProps>> = ({
           ) : (
             <Flex justifyContent="space-around" overflow="hidden">
               <SubMenuItems
-          items={[
-            {
-              label: 'EXCHANGE',
-              href: '/swap',
-            },
-            {
-              label: 'LIMIT',
-              href: '/limit-orders',
-            },
-            {
-              label: 'ADD LIQUIDITY',
-              href: '/liquidity',
-            },
-          ]}
-          mt={`${totalTopMenuHeight + 1}px`}
-          // activeItem={'/swap'}
-        />
-              </Flex>
-        // <div/>
+                items={[
+                  {
+                    label: 'EXCHANGE',
+                    href: '/swap',
+                  },
+                  {
+                    label: 'LIMIT',
+                    href: '/limit-orders',
+                  },
+                  {
+                    label: 'ADD LIQUIDITY',
+                    href: '/liquidity',
+                  },
+                ]}
+                mt={`${totalTopMenuHeight + 1}px`}
+              // activeItem={'/swap'}
+              />
+            </Flex>
+            // <div/>
           )}
           <BodyWrapper mt={"0"}>
+            <>
+            <MobileView>
+              <img style={{
+                position: 'absolute',
+                width: '100%',
+                height: '100%',
+              }}
+                alt=''
+                src='./images/bg2.png' />
+            </MobileView>
             <Inner>{children}</Inner>
+            </>
+            
           </BodyWrapper>
         </Wrapper>
       </AtomBox>

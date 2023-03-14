@@ -595,7 +595,7 @@ export default function AddLiquidity({ currencyA, currencyB }) {
       {showAddLiquidity && (
         <>
           <div style={{
-            height: '740px',
+            height: '800px',
             borderRadius: '10px',
             border: '1px solid #403d3f',
             marginBottom: '15px',
@@ -633,7 +633,7 @@ export default function AddLiquidity({ currencyA, currencyB }) {
                   showUSDPrice
                   onInputBlur={canZap ? zapIn.onInputBlurOnce : undefined}
                   error={zapIn.priceSeverity > 3 && zapIn.swapTokenField === Field.CURRENCY_A}
-                  // disabled={canZap && !zapTokenCheckedA}
+                  disabled={canZap && !zapTokenCheckedA}
                   // beforeButton={
                   //   canZap && (
                   //     <ZapCheckbox

@@ -459,14 +459,14 @@ const Staked: React.FunctionComponent<React.PropsWithChildren<StackedActionProps
 
   return (
     <ActionContainer>
-      {/* <ActionTitles>
+      <ActionTitles>
         <Text fontSize="12px" bold color="secondary" as="span" textTransform="uppercase">
           {t('Stake')}{' '}
         </Text>
         <Text fontSize="12px" bold color="textSubtle" as="span" textTransform="uppercase">
           {stakingToken.symbol}
         </Text>
-      </ActionTitles> */}
+      </ActionTitles>
       <ActionContent>
         {vaultKey ? (
           <VaultStakeButtonGroup
