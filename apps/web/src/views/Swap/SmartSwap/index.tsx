@@ -284,7 +284,7 @@ export const SmartSwapForm: React.FC<{ handleOutputSelect: (newCurrencyOutput: C
         hasAmount={hasAmount}
         onRefreshPrice={onRefreshPrice}
       />
-      <Wrapper id="swap-page" style={{ minHeight: '350px' }}>
+      <Wrapper id="swap-page" style={{ minHeight: '380px' }}>
         <AutoColumn gap="sm">
           <CurrencyInputPanel
             label={independentField === Field.OUTPUT && !showWrap && tradeInfo ? t('From (estimated)') : t('From')}
@@ -341,11 +341,11 @@ export const SmartSwapForm: React.FC<{ handleOutputSelect: (newCurrencyOutput: C
             otherCurrency={currencies[Field.INPUT]}
             id="swap-currency-output"
             showCommonBases
-            disabled={smartRouterOn}
+            
             showUSDPrice={!!tokenMap[chainId]?.[outputCurrencyId] || outputCurrencyId === NATIVE[chainId]?.symbol}
             commonBasesType={CommonBasesType.SWAP_LIMITORDER}
           />
-
+{/* disabled={smartRouterOn} */}
           {/* {isAccessTokenSupported && outputCurrency?.isToken && (
             <Box>
               <AccessRisk token={outputCurrency} />

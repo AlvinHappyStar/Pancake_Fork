@@ -115,11 +115,20 @@ export default function Swap() {
         <Flex flexDirection="row">
           <StyledSwapContainer $isChartExpanded={isChartExpanded}>
             <StyledInputCurrencyWrapper mt={isChartExpanded ? '24px' : '0'}>
-              <AppBody>
+            {/* <div style={{
+        height: '400px',
+        borderRadius: '10px',
+        border: '1px solid #403d3f',
+        marginBottom: '15px',
+        background: 'linear-gradient(90deg, #040304 0%, #050303 50%, #020102 100%)',
+        boxShadow: '#fff 0px 2px 20px',
+      }}> */}
+      <AppBody >
                 <QueryClientProvider client={queryClient}>
                   <SmartSwapForm handleOutputSelect={handleOutputSelect} />
                 </QueryClientProvider>
-              </AppBody>
+                </AppBody>
+              {/* </div> */}
             </StyledInputCurrencyWrapper>
           </StyledSwapContainer>
         </Flex>

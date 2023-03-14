@@ -193,8 +193,8 @@ export default function AddLiquidity({ currencyA, currencyB }) {
     () => ({
       [independentField]:
         canZap &&
-        ((independentField === Field.CURRENCY_A && !zapTokenCheckedA) ||
-          (independentField === Field.CURRENCY_B && !zapTokenCheckedB))
+          ((independentField === Field.CURRENCY_A && !zapTokenCheckedA) ||
+            (independentField === Field.CURRENCY_B && !zapTokenCheckedB))
           ? ''
           : typedValue,
       [dependentField]: noLiquidity ? otherTypedValue : parsedAmounts[dependentField]?.toSignificant(6) ?? '',
@@ -318,17 +318,17 @@ export default function AddLiquidity({ currencyA, currencyB }) {
 
   const pendingText = preferZapInstead
     ? t('Zapping %amountA% %symbolA% and %amountB% %symbolB%', {
-        amountA: parsedAmounts[Field.CURRENCY_A]?.toSignificant(6) ?? '0',
-        symbolA: currencies[Field.CURRENCY_A]?.symbol ?? '',
-        amountB: parsedAmounts[Field.CURRENCY_B]?.toSignificant(6) ?? '0',
-        symbolB: currencies[Field.CURRENCY_B]?.symbol ?? '',
-      })
+      amountA: parsedAmounts[Field.CURRENCY_A]?.toSignificant(6) ?? '0',
+      symbolA: currencies[Field.CURRENCY_A]?.symbol ?? '',
+      amountB: parsedAmounts[Field.CURRENCY_B]?.toSignificant(6) ?? '0',
+      symbolB: currencies[Field.CURRENCY_B]?.symbol ?? '',
+    })
     : t('Supplying %amountA% %symbolA% and %amountB% %symbolB%', {
-        amountA: parsedAmounts[Field.CURRENCY_A]?.toSignificant(6) ?? '',
-        symbolA: currencies[Field.CURRENCY_A]?.symbol ?? '',
-        amountB: parsedAmounts[Field.CURRENCY_B]?.toSignificant(6) ?? '',
-        symbolB: currencies[Field.CURRENCY_B]?.symbol ?? '',
-      })
+      amountA: parsedAmounts[Field.CURRENCY_A]?.toSignificant(6) ?? '',
+      symbolA: currencies[Field.CURRENCY_A]?.symbol ?? '',
+      amountB: parsedAmounts[Field.CURRENCY_B]?.toSignificant(6) ?? '',
+      symbolB: currencies[Field.CURRENCY_B]?.symbol ?? '',
+    })
 
   const handleDismissConfirmation = useCallback(() => {
     // if there was a tx hash, we want to clear the input
@@ -575,17 +575,32 @@ export default function AddLiquidity({ currencyA, currencyB }) {
 
   return (
     <Page>
-      <AppBody>
-        {!showAddLiquidity && (
-          <ChoosePair
-            error={error}
-            currencyA={currencies[Field.CURRENCY_A]}
-            currencyB={currencies[Field.CURRENCY_B]}
-            onNext={() => setSteps(Steps.Add)}
-          />
-        )}
-        {showAddLiquidity && (
-          <>
+
+      {!showAddLiquidity && (
+        <div style={{
+          height: '420px',
+          borderRadius: '10px',
+          border: '1px solid #403d3f',
+          marginBottom: '15px',
+          boxShadow: '#fff 0px 2px 20px',
+        }}>
+        <ChoosePair
+          error={error}
+          currencyA={currencies[Field.CURRENCY_A]}
+          currencyB={currencies[Field.CURRENCY_B]}
+          onNext={() => setSteps(Steps.Add)}
+        />
+        </div>
+      )}
+      {showAddLiquidity && (
+        <>
+          <div style={{
+            height: '740px',
+            borderRadius: '10px',
+            border: '1px solid #403d3f',
+            marginBottom: '15px',
+            boxShadow: '#fff 0px 2px 20px',
+          }}>
             <AppHeader
               title={
                 currencies[Field.CURRENCY_A]?.symbol && currencies[Field.CURRENCY_B]?.symbol
@@ -598,7 +613,7 @@ export default function AddLiquidity({ currencyA, currencyB }) {
               )}
               backTo={canZap ? () => setSteps(Steps.Choose) : '/liquidity'}
             />
-            <CardBody>
+            <CardBody style={{ background: "transparent" }}>
               <AutoColumn gap="20px">
                 {noLiquidity && (
                   <ColumnCenter>
@@ -618,18 +633,18 @@ export default function AddLiquidity({ currencyA, currencyB }) {
                   showUSDPrice
                   onInputBlur={canZap ? zapIn.onInputBlurOnce : undefined}
                   error={zapIn.priceSeverity > 3 && zapIn.swapTokenField === Field.CURRENCY_A}
-                  disabled={canZap && !zapTokenCheckedA}
-                  beforeButton={
-                    canZap && (
-                      <ZapCheckbox
-                        disabled={currencyBalances?.[Field.CURRENCY_A]?.equalTo(0)}
-                        checked={zapTokenCheckedA}
-                        onChange={(e) => {
-                          setZapTokenToggleA(e.target.checked)
-                        }}
-                      />
-                    )
-                  }
+                  // disabled={canZap && !zapTokenCheckedA}
+                  // beforeButton={
+                  //   canZap && (
+                  //     <ZapCheckbox
+                  //       disabled={currencyBalances?.[Field.CURRENCY_A]?.equalTo(0)}
+                  //       checked={zapTokenCheckedA}
+                  //       onChange={(e) => {
+                  //         setZapTokenToggleA(e.target.checked)
+                  //       }}
+                  //     />
+                  //   )
+                  // }
                   onCurrencySelect={handleCurrencyASelect}
                   zapStyle={canZap ? 'zap' : 'noZap'}
                   value={formattedAmounts[Field.CURRENCY_A]}
@@ -656,19 +671,19 @@ export default function AddLiquidity({ currencyA, currencyB }) {
                 <CurrencyInputPanel
                   showUSDPrice
                   onInputBlur={canZap ? zapIn.onInputBlurOnce : undefined}
-                  disabled={canZap && !zapTokenCheckedB}
+                  // disabled={canZap && !zapTokenCheckedB}
                   error={zapIn.priceSeverity > 3 && zapIn.swapTokenField === Field.CURRENCY_B}
-                  beforeButton={
-                    canZap && (
-                      <ZapCheckbox
-                        disabled={currencyBalances?.[Field.CURRENCY_B]?.equalTo(0)}
-                        checked={zapTokenCheckedB}
-                        onChange={(e) => {
-                          setZapTokenToggleB(e.target.checked)
-                        }}
-                      />
-                    )
-                  }
+                  // beforeButton={
+                  //   canZap && (
+                  //     <ZapCheckbox
+                  //       disabled={currencyBalances?.[Field.CURRENCY_B]?.equalTo(0)}
+                  //       checked={zapTokenCheckedB}
+                  //       onChange={(e) => {
+                  //         setZapTokenToggleB(e.target.checked)
+                  //       }}
+                  //     />
+                  //   )
+                  // }
                   onCurrencySelect={handleCurrencyBSelect}
                   disableCurrencySelect={canZap}
                   zapStyle={canZap ? 'zap' : 'noZap'}
@@ -745,16 +760,16 @@ export default function AddLiquidity({ currencyA, currencyB }) {
                         </strong>{' '}
                         {zapIn.gasOverhead
                           ? t(
-                              'Some of your %token0% will be converted to %token1% before adding liquidity, but this may cause higher gas fees.',
-                              {
-                                token0: currencies[zapIn.swapTokenField]?.symbol,
-                                token1: currencies[zapIn.swapOutTokenField]?.symbol,
-                              },
-                            )
-                          : t('Some of your %token0% will be converted to %token1%.', {
+                            'Some of your %token0% will be converted to %token1% before adding liquidity, but this may cause higher gas fees.',
+                            {
                               token0: currencies[zapIn.swapTokenField]?.symbol,
                               token1: currencies[zapIn.swapOutTokenField]?.symbol,
-                            })}
+                            },
+                          )
+                          : t('Some of your %token0% will be converted to %token1%.', {
+                            token0: currencies[zapIn.swapTokenField]?.symbol,
+                            token1: currencies[zapIn.swapOutTokenField]?.symbol,
+                          })}
                       </MessageText>
                     </AutoColumn>
                   </Message>
@@ -893,9 +908,10 @@ export default function AddLiquidity({ currencyA, currencyB }) {
                 )}
               </AutoColumn>
             </CardBody>
-          </>
-        )}
-      </AppBody>
+          </div>
+        </>
+
+      )}
       {!(addIsUnsupported || addIsWarning) ? (
         pair && !noLiquidity && pairState !== PairState.INVALID ? (
           <AutoColumn style={{ minWidth: '20rem', width: '100%', maxWidth: '400px', marginTop: '1rem' }}>

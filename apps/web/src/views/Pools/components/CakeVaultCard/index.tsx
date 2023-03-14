@@ -78,7 +78,7 @@ export const CakeVaultDetail: React.FC<React.PropsWithChildren<CakeVaultDetailPr
                 )}
                 <RecentCakeProfitRow pool={pool} />
               </Box>
-              <Flex flexDirection="column" height={88}>
+              <Flex flexDirection="column" height={86} marginBottom = {-50}>
                 {account ? (
                   <VaultCardActions
                     pool={pool}

@@ -199,12 +199,12 @@ const Menu: React.FC<React.PropsWithChildren<NavProps>> = ({
               href: '/limit-orders',
             },
             {
-              label: 'LIQUIDITY',
+              label: 'ADD LIQUIDITY',
               href: '/liquidity',
             },
           ]}
           mt={`${totalTopMenuHeight + 1}px`}
-          activeItem={'/swap'}
+          // activeItem={'/swap'}
         />
               </Flex>
         // <div/>

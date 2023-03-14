@@ -47,7 +47,7 @@ export function ChoosePair({
         )}
         backTo="/liquidity"
       />
-      <CardBody>
+      <CardBody style={{background:"transparent"}}>
         <Box>
           <Text textTransform="uppercase" color="secondary" bold small pb="24px">
             {t('Choose a valid pair')}
@@ -82,7 +82,9 @@ export function ChoosePair({
           )}
         </Box>
       </CardBody>
-      <CardFooter>
+      <CardFooter
+        style={{height:"100px", background:'transparent'}}
+      >
         {!account ? (
           <ConnectWalletButton width="100%" />
         ) : (

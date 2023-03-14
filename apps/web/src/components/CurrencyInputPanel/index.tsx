@@ -25,14 +25,14 @@ const InputRow = styled.div<{ selected: boolean }>`
   padding: ${({ selected }) => (selected ? '0.75rem 0.5rem 0.75rem 1rem' : '0.75rem 0.75rem 0.75rem 1rem')};
 `
 const CurrencySelectButton = styled(Button).attrs({ variant: 'text', scale: 'sm' }) <{ zapStyle?: ZapStyle }>`
-  padding: 0 0.5rem;
+  padding: 0.5rem 0;
   ${({ zapStyle, theme }) =>
     zapStyle &&
     css`
       padding: 8px;
       background: ${theme.colors.background};
       border: 1px solid ${theme.colors.cardBorder};
-      border-radius: ${zapStyle === 'zap' ? '0px' : '8px'} 8px 0px 0px;
+      border-radius: ${zapStyle === 'zap' ? '8px' : '0px'} 8px 8px 8px;
       height: auto;
     `};
 `
@@ -195,7 +195,7 @@ export default function CurrencyInputPanel({
             />
           </LabelRow>
           {!!currency && showUSDPrice && (
-            <Flex justifyContent="flex-end" mr="1rem">
+            <Flex justifyContent="flex-start" ml="1rem">
               <Flex maxWidth="200px">
                 {Number.isFinite(amountInDollar) ? (
                   <Text fontSize="12px" color="#fff">
@@ -257,7 +257,7 @@ export default function CurrencyInputPanel({
         {disabled && <Overlay />}
       </InputPanel>
 
-      <Flex alignItems="center" justifyContent="right">
+      <Flex flexDirection="column" alignItems="center" justifyContent="left">
         <Flex>
           {beforeButton}
           <CurrencySelectButton
@@ -270,7 +270,7 @@ export default function CurrencyInputPanel({
               }
             }}
           >
-            <Flex alignItems="center" justifyContent="space-between">
+            <Flex alignItems="center" justifyContent="left">
               {pair ? (
                 <DoubleCurrencyLogo currency0={pair.token0} currency1={pair.token1} size={16} margin />
               ) : currency ? (
@@ -318,7 +318,7 @@ export default function CurrencyInputPanel({
             </Flex>
           ) : null} */}
         </Flex>
-        {/* {account && (
+        {account && (
           <Text
             onClick={!disabled && onMax}
             color="textSubtle"
@@ -329,7 +329,7 @@ export default function CurrencyInputPanel({
               ? t('Balance: %balance%', { balance: selectedCurrencyBalance?.toSignificant(6) ?? t('Loading') })
               : ' -'}
           </Text>
-        )} */}
+        )}
       </Flex>
     {/* </Box > */}
     </div>
