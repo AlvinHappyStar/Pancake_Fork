@@ -34,14 +34,16 @@ const FarmCardInnerContainer = styled(Flex)`
   flex-direction: column;
   justify-content: space-around;
   padding: 24px;
-  background: linear-gradient(90deg, #10080c 0%, #291a1f 50%, #0d040b 100%);
+  // background: linear-gradient(90deg, #10080c 0%, #291a1f 50%, #0d040b 100%);
+  background: rgba(11, 5, 8, 0.2);
 `
 
 const ExpandingWrapper = styled.div`
   padding: 24px;
   // border-top: 2px solid ${({ theme }) => theme.colors.cardBorder};
   overflow: hidden;
-  background: linear-gradient(90deg, #10080c 0%, #291a1f 50%, #0d040b 100%);
+  // background: linear-gradient(90deg, #10080c 0%, #291a1f 50%, #0d040b 100%);
+  background: rgba(11, 5, 8, 0.2);
 `
 
 interface FarmCardProps {

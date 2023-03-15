@@ -5,7 +5,8 @@ import { CardHeader, Flex, Heading, Text } from "../../components";
 
 const Wrapper = styled(CardHeader)<{ isFinished?: boolean; background: string }>`
   
-  background: linear-gradient(90deg, #10080c 0%, #291a1f 50%, #0d040b 100%);
+  // background: linear-gradient(90deg, #10080c 0%, #291a1f 50%, #0d040b 100%);
+  background: rgba(11, 5, 8, 0.2);
   border-radius: ${({ theme }) => `${theme.radii.card} ${theme.radii.card} 0 0`};
 `;
 

@@ -59,19 +59,21 @@ const Pools: React.FC<React.PropsWithChildren> = () => {
         </Flex>
       </PageHeader> */}
 
-      <Page>     
+
+      <Page>
 
         <Heading as="h1" scale="xxl" color="secondary" mb="24px">
           {t('SFY POOLS')}
         </Heading>
         <div style={{
-          borderRadius: '15px',
+          // borderRadius: '15px',
           width: '100%',
-          background: 'linear-gradient(90deg, #050104 0%, #27151a 50%, #050205 100%)',
-          border: '1px solid #5d5c5d',
-          boxShadow: '#fff 0px 2px 8px',
+          // background: 'linear-gradient(90deg, #050104 0%, #27151a 50%, #050205 100%)',
+          background:'transparent',
+          // border: '1px solid #5d5c5d',
+          // boxShadow: '#fff 0px 2px 8px',
           display: 'flex',
-          flexDirection: 'column',
+          flexDirection: 'column'
         }}>
           <PoolControls pools={pools}>
             {({ chosenPools, viewMode, stakedOnly, normalizedUrlSearch, showFinishedPools }) => (
