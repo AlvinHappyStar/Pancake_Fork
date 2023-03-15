@@ -51,7 +51,7 @@ export function PoolCard<T>({ pool, cardContent, aprRow, isStaked, cardFooter, t
       </PoolCardHeader>
       <CardBody>
         {aprRow}
-        <Flex mt="10px" flexDirection="column" height={70} marginBottom={30}>
+        <Flex mt="10px" flexDirection="column" height={63} marginBottom={30}>
           {cardContent}
         </Flex>
       </CardBody>

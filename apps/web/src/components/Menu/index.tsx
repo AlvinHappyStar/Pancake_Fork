@@ -45,7 +45,7 @@ const Menu = (props) => {
           <>
             {/* <NetworkSwitcher /> */}
             <div style={{
-              height: '45px',
+              height: '35px',
               margin: '150px, 0px',
             }}>
               <UserMenu />
