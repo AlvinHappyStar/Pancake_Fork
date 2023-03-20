@@ -9,6 +9,15 @@ export const CAKE_MAINNET = new ERC20Token(
   'https://pancakeswap.finance/',
 )
 
+export const CAKE_GOERLI = new ERC20Token(
+  ChainId.GOERLI,
+  '0xefc5bAE08de485DA4D4425B2Ad4adf44FF2F3844',
+  18,
+  'SFY',
+  'PancakeSwap Token',
+  'https://pancakeswap.finance/',
+)
+
 export const CAKE_TESTNET = new ERC20Token(
   ChainId.BSC_TESTNET,
   '0xFa60D973F7642B748046464e165A65B7323b0DEE',
@@ -116,6 +125,7 @@ export const BUSD: Record<ChainId, ERC20Token> = {
 export const CAKE = {
   [ChainId.BSC]: CAKE_MAINNET,
   [ChainId.BSC_TESTNET]: CAKE_TESTNET,
+  [ChainId.GOERLI] : CAKE_GOERLI,
 }
 
 export const USDC = {

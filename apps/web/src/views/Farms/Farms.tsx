@@ -158,7 +158,7 @@ const Farms: React.FC<React.PropsWithChildren> = ({ children }) => {
   const { chainId } = useActiveChainId()
   const { data: farmsLP, userDataLoaded, poolLength, regularCakePerBlock } = useFarms()
   const cakePrice = usePriceCakeBusd()
-
+console.log("pak1", farmsLP)
   const [_query, setQuery] = useState('')
   const normalizedUrlSearch = useMemo(() => (typeof urlQuery?.search === 'string' ? urlQuery.search : ''), [urlQuery])
   const query = normalizedUrlSearch && !_query ? normalizedUrlSearch : _query
@@ -197,6 +197,7 @@ const Farms: React.FC<React.PropsWithChildren> = ({ children }) => {
       farm.multiplier !== '0X' &&
       (!poolLength || poolLength > farm.pid),
   )
+  console.log("pak2", activeFarms)
 
   const inactiveFarms = farmsLP.filter(
     (farm) =>
@@ -204,6 +205,7 @@ const Farms: React.FC<React.PropsWithChildren> = ({ children }) => {
       farm.lpAddress === '0x272c2CF847A49215A3A1D4bFf8760E503A06f880' ||
       (farm.pid !== 0 && farm.multiplier === '0X'),
   )
+  console.log("pak3", inactiveFarms)
   const archivedFarms = farmsLP
 
   const stakedOnlyFarms = activeFarms.filter(
@@ -212,6 +214,7 @@ const Farms: React.FC<React.PropsWithChildren> = ({ children }) => {
       (new BigNumber(farm.userData.stakedBalance).isGreaterThan(0) ||
         new BigNumber(farm.userData.proxy?.stakedBalance).isGreaterThan(0)),
   )
+  console.log("pak4", stakedOnlyFarms)
 
   const stakedInactiveFarms = inactiveFarms.filter(
     (farm) =>
@@ -219,6 +222,7 @@ const Farms: React.FC<React.PropsWithChildren> = ({ children }) => {
       (new BigNumber(farm.userData.stakedBalance).isGreaterThan(0) ||
         new BigNumber(farm.userData.proxy?.stakedBalance).isGreaterThan(0)),
   )
+  console.log("pak5", stakedInactiveFarms)
 
   const stakedArchivedFarms = archivedFarms.filter(
     (farm) =>
@@ -226,6 +230,7 @@ const Farms: React.FC<React.PropsWithChildren> = ({ children }) => {
       (new BigNumber(farm.userData.stakedBalance).isGreaterThan(0) ||
         new BigNumber(farm.userData.proxy?.stakedBalance).isGreaterThan(0)),
   )
+  console.log("pak6", stakedArchivedFarms)
 
   const farmsList = useCallback(
     (farmsToDisplay: DeserializedFarm[]): FarmWithStakedValue[] => {
@@ -253,6 +258,7 @@ const Farms: React.FC<React.PropsWithChildren> = ({ children }) => {
     },
     [query, isActive, chainId, cakePrice, regularCakePerBlock],
   )
+  console.log("pak7", farmsList)
 
   const handleChangeQuery = (event: React.ChangeEvent<HTMLInputElement>) => {
     setQuery(event.target.value)
@@ -303,6 +309,7 @@ const Farms: React.FC<React.PropsWithChildren> = ({ children }) => {
     boostedOnly,
     stableSwapOnly,
   ])
+  console.log("pak8", chosenFarms)
 
   const chosenFarmsMemoized = useMemo(() => {
     const sortFarms = (farms: FarmWithStakedValue[]): FarmWithStakedValue[] => {
