@@ -24,7 +24,7 @@
       "symbol": "SFY",
       "decimals": 18,
       "chainId": 5,
-      "logoURI": "https://tokens.pancakeswap.finance/images/symbol/usdc.png"
+      "logoURI": ""
     },
     {
       "name": "SFYX",
@@ -32,7 +32,7 @@
       "symbol": "SFYX",
       "decimals": 18,
       "chainId": 5,
-      "logoURI": "https://tokens.pancakeswap.finance/images/symbol/usdc.png"
+      "logoURI": ""
     }
   ]
 }
