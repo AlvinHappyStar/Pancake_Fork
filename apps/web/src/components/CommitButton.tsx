@@ -2,8 +2,16 @@ import { Button, ButtonProps } from '@pancakeswap/uikit'
 import { useSwitchNetworkLoading } from 'hooks/useSwitchNetworkLoading'
 import { useSetAtom } from 'jotai'
 import { useActiveChainId } from 'hooks/useActiveChainId'
+import styled from 'styled-components'
 import { hideWrongNetworkModalAtom } from './NetworkModal'
 import Trans from './Trans'
+
+const ButtonGradient = styled(Button)`
+  background: linear-gradient(180deg, #7a436e, #7c364c);
+  width:100%;
+  height:100%;
+  font-size:20px;
+`;
 
 const wrongNetworkProps: ButtonProps = {
   variant: 'danger',
@@ -17,7 +25,7 @@ export const CommitButton = (props: ButtonProps) => {
   const setHideWrongNetwork = useSetAtom(hideWrongNetworkModalAtom)
 
   return (
-    <Button
+    <ButtonGradient
       {...props}
       onClick={(e) => {
         if (isWrongNetwork) {

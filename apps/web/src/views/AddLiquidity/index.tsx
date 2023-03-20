@@ -578,7 +578,7 @@ export default function AddLiquidity({ currencyA, currencyB }) {
 
       {!showAddLiquidity && (
         <div style={{
-          height: '420px',
+          height: '480px',
           borderRadius: '10px',
           border: '1px solid #403d3f',
           marginBottom: '15px',
@@ -841,7 +841,11 @@ export default function AddLiquidity({ currencyA, currencyB }) {
                     {t('Unsupported Asset')}
                   </Button>
                 ) : !account ? (
+                  <div style={{
+                    height:'50px',
+                  }}>
                   <ConnectWalletButton />
+                  </div>
                 ) : isWrongNetwork ? (
                   <CommitButton />
                 ) : (

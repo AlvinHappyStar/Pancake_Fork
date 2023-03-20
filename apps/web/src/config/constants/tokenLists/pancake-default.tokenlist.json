@@ -24,7 +24,7 @@
       "symbol": "SFY",
       "decimals": 18,
       "chainId": 5,
-      "logoURI": ""
+      "logoURI": "https://tacofy-swap.web.app/images/5/tokens/0xefc5bAE08de485DA4D4425B2Ad4adf44FF2F3844.png"
     },
     {
       "name": "SFYX",
@@ -32,7 +32,7 @@
       "symbol": "SFYX",
       "decimals": 18,
       "chainId": 5,
-      "logoURI": ""
+      "logoURI": "https://tacofy-swap.web.app/images/5/tokens/0x4a364546B6765a3469ab131b96ddEbe4A2199082.png"
     }
   ]
 }
