@@ -584,12 +584,12 @@ export default function AddLiquidity({ currencyA, currencyB }) {
           marginBottom: '15px',
           boxShadow: '#fff 0px 2px 20px',
         }}>
-        <ChoosePair
-          error={error}
-          currencyA={currencies[Field.CURRENCY_A]}
-          currencyB={currencies[Field.CURRENCY_B]}
-          onNext={() => setSteps(Steps.Add)}
-        />
+          <ChoosePair
+            error={error}
+            currencyA={currencies[Field.CURRENCY_A]}
+            currencyB={currencies[Field.CURRENCY_B]}
+            onNext={() => setSteps(Steps.Add)}
+          />
         </div>
       )}
       {showAddLiquidity && (
@@ -842,12 +842,16 @@ export default function AddLiquidity({ currencyA, currencyB }) {
                   </Button>
                 ) : !account ? (
                   <div style={{
-                    height:'50px',
+                    height: '50px',
                   }}>
-                  <ConnectWalletButton />
+                    <ConnectWalletButton />
                   </div>
                 ) : isWrongNetwork ? (
-                  <CommitButton />
+                  <div style={{
+                    height: '50px',
+                  }}>
+                    <CommitButton />
+                  </div>
                 ) : (
                   <AutoColumn gap="md">
                     {shouldShowApprovalGroup && (
@@ -880,7 +884,12 @@ export default function AddLiquidity({ currencyA, currencyB }) {
                         )}
                       </RowBetween>
                     )}
-                    <CommitButton
+                    
+                  
+                    <div style={{
+                      height: '50px',
+                    }}>
+                    < CommitButton
                       isLoading={preferZapInstead && zapInEstimating}
                       variant={!isValid || zapIn.priceSeverity > 2 ? 'danger' : 'primary'}
                       onClick={() => {
@@ -908,23 +917,28 @@ export default function AddLiquidity({ currencyA, currencyB }) {
                     >
                       {errorText || t('Supply')}
                     </CommitButton>
+
+                  </div>
                   </AutoColumn>
                 )}
-              </AutoColumn>
-            </CardBody>
-          </div>
+            </AutoColumn>
+          </CardBody>
+        </div>
         </>
 
-      )}
-      {!(addIsUnsupported || addIsWarning) ? (
-        pair && !noLiquidity && pairState !== PairState.INVALID ? (
-          <AutoColumn style={{ minWidth: '20rem', width: '100%', maxWidth: '400px', marginTop: '1rem' }}>
-            <MinimalPositionCard showUnwrapped={oneCurrencyIsWNATIVE} pair={pair} />
-          </AutoColumn>
-        ) : null
-      ) : (
-        <UnsupportedCurrencyFooter currencies={[currencies.CURRENCY_A, currencies.CURRENCY_B]} />
-      )}
-    </Page>
+  )
+}
+{
+  !(addIsUnsupported || addIsWarning) ? (
+    pair && !noLiquidity && pairState !== PairState.INVALID ? (
+      <AutoColumn style={{ minWidth: '20rem', width: '100%', maxWidth: '400px', marginTop: '1rem' }}>
+        <MinimalPositionCard showUnwrapped={oneCurrencyIsWNATIVE} pair={pair} />
+      </AutoColumn>
+    ) : null
+  ) : (
+  <UnsupportedCurrencyFooter currencies={[currencies.CURRENCY_A, currencies.CURRENCY_B]} />
+)
+}
+    </Page >
   )
 }

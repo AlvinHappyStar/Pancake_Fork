@@ -162,6 +162,16 @@ const config = {
         destination: '/info/pairs/:address',
         permanent: true,
       },
+      {
+        source: '/farms',
+        destination: '/farms',
+        permanent: true,
+      },
+      {
+        source: '/liquidity',
+        destination: '/liquidity',
+        permanent: true,
+      },
     ]
   },
   webpack: (webpackConfig, { webpack }) => {

@@ -281,7 +281,7 @@ export default function CurrencyInputPanel({
                   {pair?.token0.symbol}:{pair?.token1.symbol}
                 </Text>
               ) : (
-                <Text id="pair" bold minWidth="80px">
+                <Text id="pair" fontSize="25px" minWidth="60px">
                   {(currency && currency.symbol && currency.symbol.length > 10
                     ? `${currency.symbol.slice(0, 4)}...${currency.symbol.slice(
                         currency.symbol.length - 5,
@@ -324,6 +324,7 @@ export default function CurrencyInputPanel({
             color="textSubtle"
             fontSize="14px"
             style={{ display: 'inline', cursor: 'pointer' }}
+            mt="10px"
           >
             {!hideBalance && !!currency
               ? t('Balance: %balance%', { balance: selectedCurrencyBalance?.toSignificant(6) ?? t('Loading') })

@@ -41,7 +41,7 @@ export const lightColors = {
   primaryDark: '#0098A1',
   tertiary: '#353547',
   text: '#fff',
-  text99: 'rgba(255,255,255,0.5)',
+  text99: 'rgba(255,255,255,0.3)',
   textDisabled: '#fff',
   textSubtle: '#B8ADD2',
   disabled: '#000',

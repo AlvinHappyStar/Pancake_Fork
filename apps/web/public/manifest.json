@@ -12,12 +12,12 @@
     {
       "src": "favicon.ico",
       "type": "image/x-icon",
-      "sizes": "16x16"
+      "sizes": "98x91"
     },
     {
       "src": "logo.png",
       "type": "image/png",
-      "sizes": "256x256"
+      "sizes": "98x91"
     }
   ],
   "iconPath": "/images/cake.svg"
